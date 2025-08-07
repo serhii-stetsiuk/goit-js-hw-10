@@ -4,7 +4,112 @@
   max-width: 375px;
   margin: 0 auto;
   padding: 0 16px;
+
 }
+.input-button, .timer {
+	display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-direction: row;
+		
+}
+.input-button{
+	gap: 8px;
+	margin-bottom: 32px;
+}
+.timer{
+		gap: 24px;
+}
+.input-button input{
+	border-radius: 4px;
+	width: 240px;
+	height: 40px;
+	border: 1px solid #808080;
+	border-radius: 4px;
+	font-weight: 400;
+		font-size: 16px;
+		line-height: 1.5;
+		letter-spacing: 0.04em;
+		color: #2e2f42;
+		padding: 0 16px;
+		font-family: "Montserrat", sans-serif;
+}
+
+.input-button input:hover{
+	border: 1px solid #000;
+}
+.input-button input:active {
+	border: 1px solid #4e75ff;
+}
+.input-button button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	margin: auto 0;
+	gap: 10px;
+	border-radius: 8px;
+	padding: 8px 16px;
+	width: 75px;
+	height: 40px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+	font-family: "Montserrat", sans-serif;
+	border: none;
+	color: #989898;
+	background-color: #cfcfcf;
+	cursor: auto;
+}
+.input-button button.isActive {
+	color: #fff;
+	background-color: #4e75ff;
+	cursor: pointer;
+}
+.isActive:hover{
+	 background-color: #6c8cff;
+}
+input.isDisable:hover{
+	cursor: auto;
+	border: 1px solid #808080;
+}
+.field{
+	display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+		gap: 0px;
+}
+.value{
+	font-weight: 400;
+		font-size: 40px;
+		line-height: 1.2;
+		letter-spacing: 0.04em;
+		color: #2e2f42;
+		font-family: "Montserrat", sans-serif;
+}
+.label{
+	font-weight: 400;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #2e2f42;
+		text-transform: uppercase;
+		font-family: "Montserrat", sans-serif;
+}
+.widthError{
+	max-width: 302px !important;
+	width: 100% !important;
+	max-height: 64px !important;
+	height: 100% !important;
+
+}
+
+.my-toast-colors .iziToast-close:before {
+	content: "x";
+	color: #fff !important;
+}
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .container {
