@@ -79,10 +79,10 @@ startButton.addEventListener('click', () => {
     const currentTime = Date.now();
     const different = userSelectedDate - currentTime;
 	 const str = convertMs(different);
-	 str.days < 10 ? counterDays.textContent = `0 ${str.days}` : counterDays.textContent = str.days;
-	str.hours < 10 ? counterHours.textContent = `0 ${str.hours}` : counterHours.textContent = str.hours;
-	str.minutes < 10 ? counterMinutes.textContent = `0 ${str.minutes}` : counterMinutes.textContent = str.minutes;
-	str.seconds < 10 ? counterSeconds.textContent = `0 ${str.seconds}` : counterSeconds.textContent = str.seconds;
+	 str.days < 10 ? counterDays.textContent = `0${str.days}` : counterDays.textContent = str.days;
+	str.hours < 10 ? counterHours.textContent = `0${str.hours}` : counterHours.textContent = str.hours;
+	str.minutes < 10 ? counterMinutes.textContent = `0${str.minutes}` : counterMinutes.textContent = str.minutes;
+	str.seconds < 10 ? counterSeconds.textContent = `0${str.seconds}` : counterSeconds.textContent = str.seconds;
 	
 	dateArea.classList.add('isDisable');
 	startButton.disabled = true;
