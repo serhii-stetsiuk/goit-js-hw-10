@@ -12,6 +12,7 @@ const counterHours = document.querySelector('[data-hours]');
 const counterMinutes = document.querySelector('[data-minutes]');
 const counterSeconds = document.querySelector('[data-seconds]');
 let userSelectedDate;
+const dateNow = new Date();
 
 const errorOptions = {
 	title: 'Error',
@@ -27,13 +28,13 @@ const options = {
 	dateFormat: "Y-m-d H:i",
    enableTime: true,
    time_24hr: true,
-   defaultDate: new Date(),
+   defaultDate: dateNow,
 	minuteIncrement: 1,
   
   onClose(selectedDates) {
 	  userSelectedDate = selectedDates[0];
 
-	  if (userSelectedDate < options.defaultDate) {
+	  if (userSelectedDate < dateNow) {
 		  iziToast.show(errorOptions);
 		  startButton.disabled = true;
 		  startButton.classList.remove('isActive');
@@ -70,6 +71,7 @@ function convertMs(ms) {
 
 let intervalId;
 startButton.disabled = true;
+
 startButton.addEventListener('click', () => {
 	if (intervalId) return;
 
@@ -77,11 +79,11 @@ startButton.addEventListener('click', () => {
     const currentTime = Date.now();
     const different = userSelectedDate - currentTime;
 	 const str = convertMs(different);
-    counterDays.textContent = str.days;
-	 counterHours.textContent = str.hours;
-	 counterMinutes.textContent = str.minutes;
-	 counterSeconds.textContent = str.seconds;
-	  
+	 str.days < 10 ? counterDays.textContent = `0 ${str.days}` : counterDays.textContent = str.days;
+	str.hours < 10 ? counterHours.textContent = `0 ${str.hours}` : counterHours.textContent = str.hours;
+	str.minutes < 10 ? counterMinutes.textContent = `0 ${str.minutes}` : counterMinutes.textContent = str.minutes;
+	str.seconds < 10 ? counterSeconds.textContent = `0 ${str.seconds}` : counterSeconds.textContent = str.seconds;
+	
 	dateArea.classList.add('isDisable');
 	startButton.disabled = true;
 	dateArea.disabled = true;
